@@ -1,0 +1,14 @@
+class Solution {
+    public int reverseDigits(int n) {
+        // Code here
+        int reverse=0;
+        int num;
+        while(n>0)
+        {
+            num=n%10;
+            reverse=(reverse*10)+num;
+            n=n/10;
+        }
+        return reverse;
+    }
+}
