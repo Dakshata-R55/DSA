@@ -1,0 +1,23 @@
+// User function Template for Java
+class Solution {
+    static boolean armstrongNumber(int n) {
+        // code here
+        int number=n;
+        boolean ret=false;
+        int rem=0;
+        int num=0;
+        while(n>0)
+        {
+            rem=n%10;
+            int tem = (int)Math.pow(rem,3);
+            num=num+tem;
+            n=n/10;
+        }
+
+        if(num==number)
+        {
+            ret=true;
+        }
+        return ret;
+    }
+}
