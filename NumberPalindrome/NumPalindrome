@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isPalindrome(int n) {
+        // code here
+        boolean ret=false;
+
+        String str=Integer.toString(n);
+        int num=0;
+        for(int i=str.length()-1;i>=0;i--)
+        {
+            num=num*10+(str.charAt(i)-'0');
+        }
+
+        if(num==n)
+        {
+            ret=true;
+        }
+
+        return ret;
+    }
+}
