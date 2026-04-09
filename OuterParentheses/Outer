@@ -1,0 +1,39 @@
+class Solution {
+    public static String removeOuter(String s) {
+        // code here
+        int opar=0;
+        int ipar=0;
+        int par=0;
+        String ret="";
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)=='(')
+            {
+                par++;
+               if(par>1)
+                {
+                    ipar++;
+                    ret=ret+s.charAt(i);
+                }
+            }
+
+            else if(s.charAt(i)==')')
+            {
+                if(par>1)
+                {
+                    ret=ret+s.charAt(i);
+                }
+                par--;
+
+            }
+
+            else
+            {
+                ret=ret+s.charAt(i);
+            }
+
+        }
+
+        return ret;
+    }
+}
