@@ -1,0 +1,22 @@
+class Solution {
+    public String largestOddNumber(String num) {
+    String ret="";
+for(int i=num.length();i>0;i--)
+{
+    int numb=Integer.parseInt(String.valueOf(num.charAt(i-1)));
+    if(numb%2==1)
+    {
+ret=num.substring(0,i);
+break;
+    }
+}
+
+return ret;
+
+
+
+
+
+
+    }
+}
