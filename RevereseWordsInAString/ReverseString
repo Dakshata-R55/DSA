@@ -1,0 +1,44 @@
+class Solution {
+    public String reverseWords(String s) {
+       String first="";
+       String ret="";
+int gap=0;
+       for(int i=0;i<s.length();i++)
+       {
+        if(s.charAt(i)!=' ')
+        {
+            first=first+s.charAt(i);
+        }
+        if(s.charAt(i)==' '&&first!="")
+        {
+            gap++;
+            if(gap==1)
+            {
+            ret=first;
+            first="";
+            }
+            else
+            {
+                ret=first+" "+ret;
+                first="";
+            }
+
+        }
+ if(i==s.length()-1&&first!="")
+        {
+            if(s.charAt(i)==' '||gap<1)
+            {
+               ret=first;
+
+            }
+            else
+            {
+            ret=first+" "+ret;
+            }
+
+        }
+       }
+       //ret=
+return ret;
+    }
+}
