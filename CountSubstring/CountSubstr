@@ -1,0 +1,46 @@
+class Solution {
+    public static int countSubstring(String s) {
+        // code here
+       int count=0;
+       int i=0;
+       int j=i+2;
+
+
+
+       while(i!=s.length()-2)
+       {
+
+           int[] arr=new int[3];
+           for(int sa=i;sa<=j;sa++)
+           {
+               int ind=s.charAt(sa)-'a';
+               arr[ind]++;
+           }
+
+           int tem=0;
+           for(int c=0;c<arr.length;c++)
+           {
+               if(arr[c]>=1)
+               {
+
+                  tem++;
+
+               }
+
+           }
+
+           if(tem==3)
+           {
+               count++;
+           }
+
+           if(j==s.length()-1)
+           {
+               i++;
+               j=i+1;
+           }
+           j++;
+       }
+       return count;
+    }
+}
