@@ -1,0 +1,43 @@
+class Solution {
+    public int beautySum(String s) {
+int i=0;
+int j=i+2;
+int ret=0;
+if(s.length()>2)
+{
+        while(i!=s.length()-2)
+        {
+            int arr[]=new int[26];
+String chk=s.substring(i,j);
+int max=0;
+int min=Integer.MAX_VALUE;
+for(int st=i;st<=j;st++)
+{
+    arr[s.charAt(st)-'a']++;
+}
+for(int ck=0;ck<arr.length;ck++)
+{
+    if(0<arr[ck])
+    {
+        max=Math.max(max,arr[ck]);
+        min=Math.min(min,arr[ck]);
+    }
+
+}
+       ret=ret+(max-min);
+
+       if(j==s.length()-1)
+       {
+        i++;
+        j=i+1;
+       }
+       j++;
+        }
+}
+else
+{
+    return 0;
+}
+        return ret;
+    }
+}
