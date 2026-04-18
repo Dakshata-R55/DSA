@@ -1,0 +1,44 @@
+// User function Template for Java
+
+class Solution {
+    public ArrayList<Integer> findSubarray(int arr[]) {
+        // code here
+        int max=0;
+        int tem=0;
+        ArrayList<Integer> list=new ArrayList<>();
+        for(int i=0;i<arr.length;i++)
+        {
+            ArrayList<Integer> list2=new ArrayList<>();
+            //list2.add(arr[i]);
+            int temp=0;
+          for(int j=i;j<arr.length;j++)
+          {
+              if(arr[j]>=0)
+              {
+              temp=temp+arr[j];
+              list2.add(arr[j]);
+              if(max<temp||(temp==max&&list.size()<list2.size()))
+              {
+                  max=temp;
+                  list=list2;
+              }
+              }
+              else
+              {
+                  break;
+              }
+          }
+
+        }
+
+        if(max<=0)
+        {
+            list.add(-1);
+            return list;
+        }
+
+
+
+        return list;
+    }
+}
