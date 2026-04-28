@@ -1,0 +1,36 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+
+if(x<0)
+{
+    return false;
+}
+
+
+
+int ret=0;
+int chk=x;
+while(x!=0)
+{
+    int tem=x%10;
+    x=x/10;
+    ret=ret*10+tem;
+}
+
+if(ret==chk)
+{
+    return true;
+}
+
+return false;
+
+
+
+
+
+
+
+
+
+    }
+}
