@@ -1,0 +1,29 @@
+class Solution {
+    public String gcdOfStrings(String str1, String str2) {
+
+        String one=str1+str2;
+String two=str2+str1;
+
+if(!one.equals(two))
+{
+    return "";
+}
+
+        String ret="";
+int a=str1.length();
+int b=str2.length();
+
+while(b!=0)
+{
+
+    int te=b;
+    b=a%b;
+    a=te;
+
+}
+ret =one.substring(0,a);
+
+
+        return ret;
+    }
+}
