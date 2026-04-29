@@ -1,0 +1,43 @@
+class Solution {
+    public double myPow(double x, int n) {
+if(n==0)
+{
+    return 1;
+}
+
+
+double ret=x;
+
+if(n<0)
+{
+    double tem=x;
+    n=n*-1;
+    for(int i=1;i<n;i++)
+    {
+tem=tem*x;
+    }
+    //x=1/tem;
+    return 1/tem;
+}
+
+
+for(int i=1;i<n;i++)
+{
+    ret=ret*x;
+}
+
+
+return ret;
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
