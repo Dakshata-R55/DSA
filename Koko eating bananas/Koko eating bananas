@@ -1,0 +1,42 @@
+class Solution
+{
+    public int minEatingSpeed(int[] piles, int h)
+    {
+
+        int low=1;
+        int high=0;
+
+        for(int i:piles)
+        {
+            if(i>high)
+            {
+                high=i;
+            }
+        }
+
+while(low<high)
+{
+    int mid=(low+high)/2;
+int total=0;
+for(int j:piles)
+{
+total+=((j+mid-1)/mid);
+}
+
+if(total>h)
+{
+    low=mid+1;
+}
+else
+{
+
+high=mid;
+}
+
+
+
+}
+
+return low;
+    }
+}

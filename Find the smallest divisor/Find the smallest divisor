@@ -1,0 +1,44 @@
+class Solution
+{
+    public int smallestDivisor(int[] nums, int threshold)
+ {
+
+int i=1;
+int j=0;
+for(int k=0;k<nums.length;k++)
+{
+if(nums[k]>j)
+{
+    j=nums[k];
+}
+
+}
+
+//int tr=0;
+while(i<j)
+{
+
+int mid=i+(j-i)/2;
+int total=0;
+for(int ind=0;ind<nums.length;ind++)
+{
+total=total+(nums[ind]+mid-1)/mid;
+
+}
+
+if(total>threshold)
+{
+i=mid+1;
+}
+else
+{
+    j=mid;
+}
+
+}
+
+
+
+return i;
+ }
+}
