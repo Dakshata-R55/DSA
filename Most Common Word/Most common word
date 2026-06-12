@@ -1,0 +1,46 @@
+class Solution {
+    public String mostCommonWord(String paragraph, String[] banned) {
+
+
+
+        Set<String> bannedSet = new HashSet<>(Arrays.asList(banned));
+        Map<String, Integer> freqMap = new HashMap<>();
+
+        StringBuilder word = new StringBuilder();
+        String result = "";
+        int maxCount = 0;
+
+        for (int i = 0; i < paragraph.length(); i++) {
+            char c = paragraph.charAt(i);
+
+            if (Character.isLetter(c)) {
+                word.append(Character.toLowerCase(c));
+            } else {
+                if (word.length() > 0) {
+                    String w = word.toString();
+                    if (!bannedSet.contains(w)) {
+                        freqMap.put(w, freqMap.getOrDefault(w, 0) + 1);
+                        if (freqMap.get(w) > maxCount) {
+                            maxCount = freqMap.get(w);
+                            result = w;
+                        }
+                    }
+                    word.setLength(0);
+                }
+            }
+        }
+
+
+        if (word.length() > 0) {
+            String w = word.toString();
+            if (!bannedSet.contains(w)) {
+                freqMap.put(w, freqMap.getOrDefault(w, 0) + 1);
+                if (freqMap.get(w) > maxCount) {
+                    result = w;
+                }
+            }
+        }
+
+        return result;
+    }
+}
