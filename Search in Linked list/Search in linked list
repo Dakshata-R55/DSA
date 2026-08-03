@@ -1,0 +1,25 @@
+/*
+  class Node {
+   int data;
+    Node next;
+
+    Node(int d)  { data = d;  next = null; }
+}
+*/
+class Solution {
+    public boolean searchKey(Node head, int key) {
+        // Code here
+
+        Node tem=head;
+        while(tem!=null)
+        {
+            if(tem.data==key)
+            {
+                return true;
+
+            }
+            tem=tem.next;
+        }
+        return false;
+    }
+}
